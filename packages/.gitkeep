@@ -1,0 +1,9 @@
+# packages/
+
+Each subdirectory here is an independent aixyz agent.
+
+Add new agents with:
+
+```bash
+bunx create-aixyz-app <agent-name>
+```

@@ -1,6 +1,25 @@
+# Dependency directories
 node_modules/
-.env.local
+packages/*/node_modules/
+
+# Build outputs
+packages/*/dist/
+packages/*/.aixyz/
+
+# Environment files
 .env
-dist/
-.vercel/
-*.js.map
+.env.local
+packages/*/.env
+packages/*/.env.local
+
+# Bun lockfile (committed per preference)
+# bun.lockb
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+*.swp

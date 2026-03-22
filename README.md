@@ -1,42 +1,53 @@
 # agents
 
-Monorepo for [aixyz.sh](https://aixyz.sh) agents built by Agently.
+Monorepo of [aixyz](https://aixyz.sh) agents — payment-native AI agents built on the x402 / ERC-8004 protocol stack.
 
 ## Structure
 
 ```
 agents/
-  packages/
-    <agent-name>/       ← one directory per agent
-      aixyz.config.ts   ← agent name, description, payment config
-      app/
-        agent.ts        ← agent logic
-        tools/          ← tool files (optional)
-      package.json
-      .env.local        ← API keys (never commit)
+└── packages/
+    └── <agent-name>/        # each agent is its own package
+        ├── aixyz.config.ts  # agent identity, payment config, skills
+        ├── app/
+        │   ├── agent.ts     # main agent definition (Vercel AI SDK)
+        │   ├── tools/       # auto-discovered tools (A2A + MCP)
+        │   └── agents/      # sub-agents, each gets its own endpoint
+        ├── package.json
+        └── tsconfig.json
 ```
 
 ## Getting Started
 
+Prerequisites: [Bun](https://bun.sh)
+
 ```bash
-# Install dependencies
+# Install workspace dependencies
 bun install
 
-# Scaffold a new agent
-cd packages
-bunx create-aixyz-app <agent-name> --yes
-
-# Run a specific agent locally
-bun run --filter '<agent-name>' dev
-
-# Run all agents
-bun dev
+# Dev a specific agent
+cd packages/<agent-name>
+bun run dev
 ```
 
-## Deploy
+## Adding a New Agent
 
-Each agent deploys independently to Vercel or Railway. See the [aixyz docs](https://aixyz.sh) for deployment guides.
+```bash
+cd packages
+bunx create-aixyz-app <agent-name>
+```
 
-## Payments
+Each agent in `packages/` is an independent aixyz project deployed separately.
 
-Agents earn per request via x402 micropayments. Configure `payTo` in each agent's `aixyz.config.ts`.
+## Protocols
+
+Every agent in this repo supports:
+- **A2A** — Agent-to-Agent discovery and communication
+- **MCP** — Model Context Protocol for tool sharing
+- **x402** — HTTP 402 micropayments (on-chain settlement)
+- **ERC-8004** — On-chain agent identity
+
+## Links
+
+- [aixyz docs](https://aixyz.sh)
+- [use-agently marketplace](https://use-agently.com)
