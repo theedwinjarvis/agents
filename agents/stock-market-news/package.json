@@ -7,10 +7,13 @@
     "start": "aixyz start",
     "test": "bun test"
   },
+  "devDependencies": {
+    "@types/node": "^25.5.0"
+  },
   "dependencies": {
+    "@ai-sdk/alibaba": "latest",
+    "ai": "^6.0.134",
     "aixyz": "latest",
-    "@ai-sdk/qwen": "latest",
-    "ai": "^4",
     "zod": "^3"
   }
 }
