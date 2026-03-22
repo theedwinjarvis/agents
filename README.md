@@ -6,7 +6,7 @@ Monorepo of [aixyz](https://aixyz.sh) agents — payment-native AI agents built 
 
 ```
 agents/
-└── packages/
+└── agents/
     └── <agent-name>/        # each agent is its own package
         ├── aixyz.config.ts  # agent identity, payment config, skills
         ├── app/
@@ -33,7 +33,7 @@ bun run dev
 ## Adding a New Agent
 
 ```bash
-cd packages
+cd agents
 bunx create-aixyz-app <agent-name>
 ```
 
