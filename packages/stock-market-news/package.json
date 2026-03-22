@@ -1,0 +1,16 @@
+{
+  "name": "stock-market-news",
+  "private": true,
+  "scripts": {
+    "dev": "aixyz dev",
+    "build": "aixyz build",
+    "start": "aixyz start",
+    "test": "bun test"
+  },
+  "dependencies": {
+    "aixyz": "latest",
+    "@ai-sdk/qwen": "latest",
+    "ai": "^4",
+    "zod": "^3"
+  }
+}
