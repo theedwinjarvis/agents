@@ -1,0 +1,19 @@
+{
+  "name": "cafe-faq-agent",
+  "private": true,
+  "scripts": {
+    "build": "aixyz build",
+    "dev": "aixyz dev"
+  },
+  "dependencies": {
+    "@ai-sdk/openai": "^3",
+    "ai": "^6",
+    "aixyz": "0.28.0",
+    "zod": "^4"
+  },
+  "devDependencies": {
+    "@types/bun": "^1",
+    "typescript": "^5",
+    "use-agently": "latest"
+  }
+}
