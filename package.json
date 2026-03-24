@@ -2,7 +2,7 @@
   "name": "agents",
   "private": true,
   "workspaces": [
-    "packages/*"
+    "agents/*"
   ],
   "scripts": {
     "dev": "bun --filter '*' dev",
